@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<div class="portfolio-grid">
+  {% assign collection = site[page.collection_name] %}
+  {% for item in collection %}
+    <div class="portfolio-item">
+      <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+      <p>{{ item.excerpt | strip_html | truncatewords: 20 }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.portfolio-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+</style>
