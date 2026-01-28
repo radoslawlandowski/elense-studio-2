@@ -25,7 +25,7 @@ layout: default
     <div class="about-content">
       <h2>O Elense Studio</h2>
       <p>
-        Witaj w Elense Studio. Jestem pasjonatem tworzenia, łączącym świat nowoczesnych technologii z tradycyjnym rzemiosłem. 
+        ASD Witaj w Elense Studio. Jestem pasjonatem tworzenia, łączącym świat nowoczesnych technologii z tradycyjnym rzemiosłem. 
         Moja praca to fuzja inżynieryjnej precyzji, innowacyjnego oprogramowania i duszy zawartej w ręcznie robionych wyrobach skórzanych. 
         Każdy projekt to nowa historia, którą staram się opowiedzieć poprzez jakość i dbałość o detal.
       </p>
