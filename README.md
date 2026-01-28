@@ -1,13 +1,16 @@
 # Elense Studio Portfolio
 
-Statyczna strona portfolio hostowana na GitHub Pages, zbudowana przy użyciu silnika Jekyll.
+Statyczna strona portfolio hostowana na GitHub Pages, zbudowana przy użyciu silnika Jekyll z motywem **Slate** i niestandardowym, nowoczesnym designem.
+
+## Funkcje
+- **Nowoczesny UI**: Ciemny motyw (Slate) z autorskimi komponentami CSS.
+- **Responsywność**: Strona w pełni dostosowana do urządzeń mobilnych.
+- **Dynamiczne Kolekcje**: Łatwe zarządzanie projektami w trzech kategoriach.
 
 ## Struktura Strony
-
-Strona posiada 3 główne sekcje (kafelki na stronie głównej):
-- **Elense Software**
-- **Elense Engineering**
-- **Elense Leathercraft**
+- **Software**: `_software/`
+- **Engineering**: `_engineering/`
+- **Leathercraft**: `_leathercraft/`
 
 ## Jak dodawać nowe elementy do portfolio?
 
