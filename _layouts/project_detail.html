@@ -14,19 +14,65 @@ layout: default
   <div class="project-content-wrapper">
     <header class="project-header">
       <h1>{{ page.title }}</h1>
+      {% if page.video_url %}
+        <div class="project-video-container">
+          <p class="video-caption">Co wyróżnia ten produkt?</p>
+          <div class="video-wrapper">
+            {% if page.video_url contains 'youtube.com' or page.video_url contains 'youtu.be' %}
+              {% assign video_id = page.video_url | split: 'v=' | last | split: '&' | first %}
+              {% if page.video_url contains 'youtu.be' %}
+                {% assign video_id = page.video_url | split: '/' | last %}
+              {% endif %}
+              <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
+            {% else %}
+              <video controls src="{{ page.video_url | relative_url }}"></video>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
     </header>
     <div class="project-description">
       {{ content }}
     </div>
 
+    {% if page.techniques %}
+      <section class="project-info-section">
+        <h2>Zastosowane techniki</h2>
+        <div class="info-content">
+          {{ page.techniques | markdownify }}
+        </div>
+      </section>
+    {% endif %}
+
     {% if page.images %}
-      <div class="project-images-grid">
-        {% for img in page.images %}
-          <div class="project-image-item">
-            <img src="{{ img | relative_url }}" alt="{{ page.title }}">
-          </div>
-        {% endfor %}
-      </div>
+      <section class="project-info-section">
+        <h2>Zdjęcia</h2>
+        <div class="project-images-grid">
+          {% for img in page.images %}
+            <div class="project-image-item">
+              <img src="{{ img | relative_url }}" alt="{{ page.title }}">
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if page.warranty %}
+      <section class="project-info-section">
+        <h2>Gwarancja</h2>
+        <div class="info-content">
+          {{ page.warranty | markdownify }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if page.how_to_buy %}
+      <section class="project-info-section">
+        <h2>Jak kupić?</h2>
+        <div class="info-content">
+          {{ page.how_to_buy | markdownify }}
+        </div>
+      </section>
     {% endif %}
 
     <footer class="project-footer">
@@ -76,7 +122,7 @@ layout: default
   line-height: 1.8;
   color: #444;
   max-width: 1400px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 80px auto;
 }
 
 .project-header {
@@ -92,11 +138,59 @@ layout: default
   margin-bottom: 20px;
 }
 
+.project-video-container {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.video-caption {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper iframe, .video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-info-section {
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+}
+
+.project-info-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.info-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
 .project-images-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  margin-top: 60px;
 }
 
 .project-image-item {
