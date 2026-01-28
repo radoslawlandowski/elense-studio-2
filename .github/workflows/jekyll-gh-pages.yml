@@ -24,10 +24,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build site using docker-compose service "jekull"
+      - name: Build site using docker-compose service "jekyll"
         run: |
           docker compose version
-          docker compose run --rm jekull jekyll build
+          docker compose run --rm jekyll jekyll build
 
       # GitHub Pages expects the built site as an artifact
       - name: Upload artifact
