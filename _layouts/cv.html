@@ -1,0 +1,168 @@
+---
+layout: default
+---
+
+<div class="cv-container">
+  <header class="cv-header">
+    <h1>{{ page.title }}</h1>
+    <a href="{{ '/' | relative_url }}" class="back-link">← Powrót do startu</a>
+  </header>
+
+  <section class="cv-section">
+    <h2>Doświadczenie Zawodowe</h2>
+    <div class="cv-item">
+      <h3>Senior Fullstack Developer</h3>
+      <p class="cv-meta">Elense Software | 2020 - Obecnie</p>
+      <ul>
+        <li>Projektowanie i implementacja skalowalnych aplikacji webowych.</li>
+        <li>Zarządzanie infrastrukturą chmurową i procesami CI/CD.</li>
+        <li>Optymalizacja wydajności systemów backendowych.</li>
+      </ul>
+    </div>
+    <div class="cv-item">
+      <h3>Software Engineer</h3>
+      <p class="cv-meta">Tech Solutions | 2017 - 2020</p>
+      <ul>
+        <li>Rozwój modułów platformy e-commerce.</li>
+        <li>Integracja z zewnętrznymi API płatności i logistyki.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2>Edukacja</h2>
+    <div class="cv-item">
+      <h3>Informatyka (Mgr Inż.)</h3>
+      <p class="cv-meta">Politechnika | 2012 - 2017</p>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2>Umiejętności</h2>
+    <div class="skills-grid">
+      <span>Python</span>
+      <span>JavaScript / TypeScript</span>
+      <span>React / Next.js</span>
+      <span>Docker & Kubernetes</span>
+      <span>PostgreSQL</span>
+      <span>AWS / GCP</span>
+    </div>
+  </section>
+
+  <section class="cv-section contact-details">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:contact@elense.com">contact@elense.com</a></p>
+    <p>Lokalizacja: Polska, Zdalnie</p>
+    <div class="social-links">
+      <a href="https://github.com/elense" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/elense" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+</div>
+
+<style>
+.site-header, .site-footer {
+  display: none !important;
+}
+
+.cv-container {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 40px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Force theme wrapper to be full width to let cv-container handle max-width */
+.wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.cv-header {
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cv-header h1 {
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.back-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.cv-section {
+  margin-bottom: 40px;
+}
+
+.cv-section h2 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.cv-item {
+  margin-bottom: 25px;
+}
+
+.cv-item h3 {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.cv-meta {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.cv-item ul {
+  padding-left: 20px;
+  color: #444;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-grid span {
+  background: #f4f4f4;
+  padding: 5px 12px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+}
+
+.contact-details a {
+  color: #000;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .cv-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>

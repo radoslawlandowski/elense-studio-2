@@ -1,0 +1,250 @@
+---
+layout: default
+---
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+<div class="leather-container">
+  <header class="leather-header">
+    <div class="header-main">
+      <h1>{{ page.title }}</h1>
+      <div class="header-actions">
+        <a href="mailto:contact@elense.com" class="btn-borderless">Contact</a>
+        <a href="https://shopify.com" target="_blank" class="btn-borderless">Shopify</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="product-grid">
+    {% assign collection = site[page.collection_name] %}
+    {% for product in collection %}
+      <a href="{{ product.url | relative_url }}" class="product-card">
+        <div class="product-image">
+          {% if product.image %}
+            <img src="{{ product.image | relative_url }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="image-placeholder">
+               <img src="{{ '/assets/images/leathercraft.jpg' | relative_url }}" alt="{{ product.title }}" style="opacity: 0.3; filter: grayscale(100%);">
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  <section class="about-leather">
+    <div class="about-leather-container">
+      <div class="about-leather-image">
+        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Elense Studio">
+      </div>
+      <div class="about-leather-content">
+        <h2>Filozofia Elense Leathercraft</h2>
+        <p>
+          Moja filozofia opiera się na prostocie, trwałości i szacunku do materiału. 
+          Wierzę, że przedmioty, którymi się otaczamy, powinny starzeć się z godnością i opowiadać historię swoich właścicieli. 
+          Każdy szew wykonany ręcznie to obietnica jakości, która przetrwa próbę czasu.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+.site-header, .site-footer {
+  display: none !important;
+}
+
+.leather-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force theme wrapper to be full width for this layout */
+.wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.leather-header {
+  margin: 60px auto;
+  max-width: 1400px;
+  padding: 0 40px 30px 40px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.leather-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 30px;
+}
+
+.btn-borderless {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.btn-borderless::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.btn-borderless:hover::after {
+  width: 100%;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.4s ease;
+  background: #fff;
+  overflow: hidden;
+}
+
+.product-image {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #fafafa;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+}
+
+/* New About Section for Leathercraft */
+.about-leather {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.about-leather-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 0 40px;
+}
+
+.about-leather-image {
+  flex: 0 0 300px;
+}
+
+.about-leather-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.about-leather-image img:hover {
+  filter: grayscale(0%);
+}
+
+.about-leather-content {
+  flex: 1;
+}
+
+.about-leather-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.about-leather-content p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+@media (max-width: 992px) {
+  .about-leather-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .about-leather-image {
+    flex: 0 0 auto;
+    width: 250px;
+  }
+  .about-leather-image img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .leather-header {
+    margin: 30px auto;
+    text-align: center;
+  }
+  .header-main {
+    justify-content: center;
+  }
+  .leather-header h1 {
+    font-size: 2.2rem;
+  }
+}
+</style>

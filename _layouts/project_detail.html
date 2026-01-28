@@ -1,0 +1,148 @@
+---
+layout: default
+---
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+<div class="project-detail-container">
+  {% if page.banner_image %}
+    <div class="project-banner">
+      <img src="{{ page.banner_image | relative_url }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+
+  <div class="project-content-wrapper">
+    <header class="project-header">
+      <h1>{{ page.title }}</h1>
+    </header>
+    <div class="project-description">
+      {{ content }}
+    </div>
+
+    {% if page.images %}
+      <div class="project-images-grid">
+        {% for img in page.images %}
+          <div class="project-image-item">
+            <img src="{{ img | relative_url }}" alt="{{ page.title }}">
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <footer class="project-footer">
+      <a href="javascript:history.back()" class="btn-back">← Powrót</a>
+    </footer>
+  </div>
+</div>
+
+<style>
+.site-header, .site-footer {
+  display: none !important;
+}
+
+.project-detail-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force theme wrapper to be full width for this layout */
+.wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.project-banner {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.project-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-content-wrapper {
+  max-width: 100%;
+  margin: 0;
+  padding: 60px 40px;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 1400px;
+  margin: 0 auto 60px auto;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.project-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.project-image-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-image-item:hover img {
+  transform: scale(1.02);
+}
+
+.project-footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.btn-back {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.btn-back:hover {
+  border-color: #000;
+}
+
+@media (max-width: 768px) {
+  .project-banner {
+    height: 40vh;
+  }
+  .project-header h1 {
+    font-size: 2.5rem;
+  }
+  .project-images-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
