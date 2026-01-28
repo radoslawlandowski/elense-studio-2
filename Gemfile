@@ -1,8 +1,7 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll
+gem "jekyll", "~> 3.9"
 gem "jekyll-remote-theme"
-
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-end
+gem "jekyll-feed", "~> 0.12"
+gem "jekyll-seo-tag"
+gem "kramdown-parser-gfm"
