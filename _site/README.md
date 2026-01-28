@@ -52,6 +52,20 @@ Najprostszą metodą uruchomienia strony lokalnie (bez konieczności instalowani
    ```
 3. Strona będzie dostępna pod adresem: `http://localhost:4000`
 
+## Deployment na GitHub Pages
+
+Projekt jest skonfigurowany do automatycznego wdrażania za pomocą GitHub Actions.
+
+1. **Push do repozytorium**: Po przesłaniu zmian na gałąź `main` lub `master`, GitHub Actions automatycznie zbuduje i wdroży stronę.
+2. **Konfiguracja Pages**:
+   - Wejdź w ustawienia swojego repozytorium na GitHub (`Settings`).
+   - Wybierz sekcję `Pages` w menu po lewej stronie.
+   - W sekcji `Build and deployment > Source` upewnij się, że wybrano **GitHub Actions**.
+3. **URL strony**: Adres strony zostanie wyświetlony w zakładce `Pages` po zakończeniu pierwszego wdrożenia. Pamiętaj, aby zaktualizować `url` w pliku `_config.yml` na właściwy adres Twojej strony (obecnie ustawiono `https://elensestudio.com`).
+4. **Własna domena (`elensestudio.com`)**:
+   - W ustawieniach repozytorium **Settings > Pages** upewnij się, że w sekcji "Custom domain" widnieje `elensestudio.com`.
+   - Skonfiguruj u swojego dostawcy domeny rekordy DNS (A records wskazujące na IP GitHub Pages lub CNAME na `<user>.github.io`).
+
 ### Metoda klasyczna (Ruby)
 
 Jeśli wolisz uruchomić projekt bezpośrednio przez Ruby:

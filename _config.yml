@@ -2,8 +2,8 @@ title: Elense Studio
 email: contact@elense.com
 description: >- # this means to ignore newlines until "baseurl:"
   Portfolio of Elense Software, Engineering, and Leathercraft.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+url: "https://elensestudio.com" # Twoja własna domena
 
 # Collections for portfolio
 collections:
