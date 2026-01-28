@@ -1,6 +1,9 @@
 ---
-title: Przykładowy Projekt Software
-layout: post
+title: E-commerce Platform
+layout: project_detail
+banner_image: https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop
+images:
+  - https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop
+  - https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop
 ---
-To jest opis mojego pierwszego projektu w dziale Software. 
-Jekyll pozwala na łatwe dodawanie kolejnych projektów poprzez tworzenie nowych plików .md w folderze `_software`.
+Kompleksowa platforma sprzedażowa zintegrowana z systemami płatności i logistyki.

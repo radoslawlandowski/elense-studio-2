@@ -36,111 +36,131 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="portfolio-container">
-  <header class="portfolio-header">
+        <div class="blog-container">
+  <header class="blog-header">
     <h1>Elense Engineering</h1>
-    <a href="/" class="back-link">← Powrót do strony głównej</a>
+    <a href="/" class="back-link">← Powrót do startu</a>
   </header>
 
-  <div class="portfolio-grid">
+  <div class="posts-list">
     
     
-      <article class="portfolio-card">
-        <div class="card-content">
-          <h3>Przykładowy Projekt Engineering</h3>
-          <p>Opis projektu inżynieryjnego.
+      <article class="post-item">
+        <span class="post-date">28.01.2026</span>
+        <h2><a href="/engineering/project-1/">Przykładowy Projekt Engineering</a></h2>
+        <p class="post-excerpt">Opis projektu inżynieryjnego.
 Możesz tu dodawać zdjęcia i specyfikacje techniczne.
 </p>
-          <a href="/engineering/project-1/" class="btn-more">Zobacz szczegóły</a>
-        </div>
+        <a href="/engineering/project-1/" class="read-more">Czytaj dalej →</a>
+      </article>
+    
+      <article class="post-item">
+        <span class="post-date">28.01.2026</span>
+        <h2><a href="/engineering/project-2/">Optymalizacja Procesów</a></h2>
+        <p class="post-excerpt">Analiza i usprawnienie linii produkcyjnej w zakładzie mechanicznym.
+</p>
+        <a href="/engineering/project-2/" class="read-more">Czytaj dalej →</a>
+      </article>
+    
+      <article class="post-item">
+        <span class="post-date">28.01.2026</span>
+        <h2><a href="/engineering/project-3/">Projekt Konstrukcyjny X1</a></h2>
+        <p class="post-excerpt">Zaawansowany projekt ramy rowerowej z kompozytów węglowych.
+</p>
+        <a href="/engineering/project-3/" class="read-more">Czytaj dalej →</a>
       </article>
     
   </div>
 </div>
 
 <style>
-.portfolio-container {
-  padding: 40px 0;
+.site-header, .site-footer {
+  display: none !important;
 }
 
-.portfolio-header {
-  margin-bottom: 40px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
+.blog-container {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 40px;
 }
 
-.portfolio-header h1 {
+/* Force theme wrapper to be full width to let blog-container handle max-width */
+.wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.blog-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.blog-header h1 {
+  font-size: 3rem;
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   margin-bottom: 10px;
 }
 
 .back-link {
-  color: #666;
+  color: #888;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.2s;
+  letter-spacing: 1px;
 }
 
 .back-link:hover {
   color: #000;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+.post-item {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.portfolio-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+.post-item:last-child {
+  border-bottom: none;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border-color: #ddd;
+.post-date {
+  font-family: monospace;
+  color: #aaa;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.card-content {
-  padding: 30px;
+.post-item h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
-.card-content h3 {
-  margin-top: 0;
-  font-weight: 400;
-}
-
-.card-content p {
-  color: #777;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.btn-more {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #000;
-  color: #fff !important;
+.post-item h2 a {
+  color: #000;
   text-decoration: none;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   transition: opacity 0.2s;
 }
 
-.btn-more:hover {
-  opacity: 0.8;
+.post-item h2 a:hover {
+  opacity: 0.7;
 }
 
-/* Adjustments for the specific theme container */
-.wrapper {
-  max-width: 1000px;
+.post-excerpt {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 </style>
 
