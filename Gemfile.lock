@@ -45,6 +45,8 @@ GEM
       listen (~> 3.0)
     kramdown (2.4.0)
       rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     liquid (4.0.4)
     listen (3.10.0)
       logger
@@ -77,6 +79,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.12)
   jekyll-remote-theme
   jekyll-seo-tag
+  kramdown-parser-gfm
 
 BUNDLED WITH
    2.3.25

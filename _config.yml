@@ -22,3 +22,4 @@ remote_theme: thedevslot/WhatATheme
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-seo-tag
