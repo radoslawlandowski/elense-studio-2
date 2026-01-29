@@ -7,6 +7,7 @@ layout: default
 <div class="leather-container">
   <header class="leather-header">
     <div class="header-main">
+      <a href="{{ '/' | relative_url }}" class="back-link">← Powrót do startu</a>
       <h1>{{ page.title }}</h1>
       <div class="header-actions">
         <a href="mailto:contact@elense.com" class="btn-borderless">Contact</a>
@@ -50,7 +51,7 @@ layout: default
 
 <style>
 .site-header, .site-footer {
-  display: none !important;
+  display: block;
 }
 
 .leather-container {
@@ -76,9 +77,20 @@ layout: default
 .header-main {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.back-link {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.back-link:hover {
+  color: #000;
 }
 
 .leather-header h1 {

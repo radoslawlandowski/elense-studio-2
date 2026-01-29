@@ -12,17 +12,6 @@
   {%- feed_meta -%}
 </head>
 <body>
-  <header class="global-header">
-    <nav class="nav-container">
-      <a href="{{ '/' | relative_url }}" class="nav-logo">Elense Studio</a>
-      <div class="nav-links">
-        <a href="{{ '/software/' | relative_url }}" {% if page.url contains '/software/' %}class="active"{% endif %}>Software</a>
-        <a href="{{ '/engineering/' | relative_url }}" {% if page.url contains '/engineering/' %}class="active"{% endif %}>Engineering</a>
-        <a href="{{ '/leathercraft/' | relative_url }}" {% if page.url contains '/leathercraft/' %}class="active"{% endif %}>Leathercraft</a>
-      </div>
-    </nav>
-  </header>
-
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       {{ content }}

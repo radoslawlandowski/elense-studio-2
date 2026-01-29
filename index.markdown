@@ -58,7 +58,7 @@ layout: default
   margin: 0 !important;
 }
 .site-header, .site-footer {
-  display: none;
+  display: block;
 }
 
 .minimal-landing-full {
