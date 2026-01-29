@@ -39,3 +39,10 @@ h1, h2, h3 {
   font-family: var(--font-serif);
   font-weight: 400;
 }
+
+/* Usuwamy grayscale z całego projektu */
+* {
+  filter: none !important;
+  -webkit-filter: grayscale(0%) !important;
+  filter: grayscale(0%) !important;
+}

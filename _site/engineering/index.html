@@ -19,14 +19,17 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","description":"Portfolio of Elense Software, Engineering, and Leathercraft.","headline":"Elense Engineering","url":"https://elensestudio.com/engineering/"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elensestudio.com/feed.xml" title="Elense Studio" /></head>
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"><link type="application/atom+xml" rel="alternate" href="https://elensestudio.com/feed.xml" title="Elense Studio" /></head>
 <body>
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       <div class="blog-container">
   <header class="blog-header">
-    <h1>Elense Engineering</h1>
     <a href="/" class="back-link">← Powrót do startu</a>
+    <h1>Elense Engineering</h1>
   </header>
 
   <div class="posts-list">
@@ -62,7 +65,7 @@ Możesz tu dodawać zdjęcia i specyfikacje techniczne.
 
 <style>
 .site-header, .site-footer {
-  display: none !important;
+  display: block;
 }
 
 .blog-container {
@@ -84,11 +87,13 @@ Możesz tu dodawać zdjęcia i specyfikacje techniczne.
 }
 
 .blog-header h1 {
-  font-size: 3rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 10px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 3.5rem;
+  text-transform: none;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
 }
 
 .back-link {

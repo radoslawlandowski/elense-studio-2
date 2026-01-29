@@ -19,14 +19,17 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","description":"Portfolio of Elense Software, Engineering, and Leathercraft.","headline":"Elense Software","url":"https://elensestudio.com/software/"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elensestudio.com/feed.xml" title="Elense Studio" /></head>
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"><link type="application/atom+xml" rel="alternate" href="https://elensestudio.com/feed.xml" title="Elense Studio" /></head>
 <body>
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       <div class="cv-container">
   <header class="cv-header">
-    <h1>Elense Software</h1>
     <a href="/" class="back-link">← Powrót do startu</a>
+    <h1>Elense Software</h1>
   </header>
 
   <section class="cv-section">
@@ -83,7 +86,7 @@
 
 <style>
 .site-header, .site-footer {
-  display: none !important;
+  display: block;
 }
 
 .cv-container {
@@ -110,10 +113,13 @@
 }
 
 .cv-header h1 {
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  text-transform: none;
+  letter-spacing: 2px;
+  font-size: 3rem;
 }
 
 .back-link {
@@ -127,10 +133,12 @@
 }
 
 .cv-section h2 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #666;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.8rem;
+  text-transform: none;
+  letter-spacing: 1px;
+  color: #333;
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
   margin-bottom: 20px;
