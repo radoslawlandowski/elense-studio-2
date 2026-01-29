@@ -32,14 +32,25 @@ Tutaj wpisz opis projektu. Możesz używać Markdown, dodawać linki i obrazki.
 
 ## Uruchamianie lokalne
 
-Najprostszą metodą uruchomienia strony lokalnie (bez konieczności instalowania Ruby i zależności) jest użycie **Docker**:
+Aby uruchomić stronę lokalnie i widzieć zmiany w czasie rzeczywistym:
 
-1. Upewnij się, że masz zainstalowany Docker.
-2. Uruchom komendę:
+1. Upewnij się, że masz zainstalowane Ruby (zalecane 3.0+ lub systemowe macOS).
+2. Zainstaluj Bundler:
    ```bash
-   docker-compose up
+   gem install bundler
    ```
-3. Strona będzie dostępna pod adresem: `http://localhost:4000`
+3. Zainstaluj zależności:
+   ```bash
+   bundle install
+   ```
+4. Uruchom serwer Jekyll:
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+Strona będzie dostępna pod adresem: `http://localhost:4000`
+
+---
 
 ## Deployment na AWS S3
 
@@ -62,12 +73,3 @@ Projekt jest skonfigurowany do automatycznego wdrażania na AWS S3 za pomocą Gi
 4. **Własna domena (`elensestudio.com`)**:
    - Skonfiguruj CloudFront lub Route 53, aby wskazywały na Twój bucket S3.
    - Pamiętaj, aby zaktualizować `url` w pliku `_config.yml` na właściwy adres Twojej strony.
-
-### Metoda klasyczna (Ruby)
-
-Jeśli wolisz uruchomić projekt bezpośrednio przez Ruby:
-
-1. Zainstaluj Ruby (zalecane 3.0+).
-2. Zainstaluj Bundler: `gem install bundler`
-3. Zainstaluj zależności: `bundle install`
-4. Uruchom serwer: `bundle exec jekyll serve`

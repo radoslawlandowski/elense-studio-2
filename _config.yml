@@ -18,7 +18,7 @@ collections:
     permalink: /leathercraft/:path/
 
 # Build settings
-remote_theme: thedevslot/WhatATheme
+# remote_theme: thedevslot/WhatATheme
 plugins:
   - jekyll-feed
   - jekyll-remote-theme

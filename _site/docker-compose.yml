@@ -5,4 +5,4 @@ services:
       - .:/srv/jekyll
     ports:
       - "4000:4000"
-    command: jekyll serve --force_polling --livereload
+    command: sh -c "bundle install && bundle exec jekyll serve --force_polling --livereload --host 0.0.0.0"
