@@ -6,9 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   {%- feed_meta -%}
 </head>
 <body>
+  <header class="global-header">
+    <nav class="nav-container">
+      <a href="{{ '/' | relative_url }}" class="nav-logo">Elense Studio</a>
+      <div class="nav-links">
+        <a href="{{ '/software/' | relative_url }}" {% if page.url contains '/software/' %}class="active"{% endif %}>Software</a>
+        <a href="{{ '/engineering/' | relative_url }}" {% if page.url contains '/engineering/' %}class="active"{% endif %}>Engineering</a>
+        <a href="{{ '/leathercraft/' | relative_url }}" {% if page.url contains '/leathercraft/' %}class="active"{% endif %}>Leathercraft</a>
+      </div>
+    </nav>
+  </header>
+
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       {{ content }}

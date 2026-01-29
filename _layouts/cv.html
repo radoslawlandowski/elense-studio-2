@@ -5,7 +5,6 @@ layout: default
 <div class="cv-container">
   <header class="cv-header">
     <h1>{{ page.title }}</h1>
-    <a href="{{ '/' | relative_url }}" class="back-link">← Powrót do startu</a>
   </header>
 
   <section class="cv-section">
@@ -89,10 +88,13 @@ layout: default
 }
 
 .cv-header h1 {
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  text-transform: none;
+  letter-spacing: 2px;
+  font-size: 3rem;
 }
 
 .back-link {
@@ -106,10 +108,12 @@ layout: default
 }
 
 .cv-section h2 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #666;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.8rem;
+  text-transform: none;
+  letter-spacing: 1px;
+  color: #333;
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
   margin-bottom: 20px;

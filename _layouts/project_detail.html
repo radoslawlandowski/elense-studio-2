@@ -129,22 +129,28 @@ function closeModal() {
 const modalElement = document.getElementById("imageModal");
 
 modalElement.addEventListener('touchstart', e => {
+    if (e.touches.length > 1) {
+        touchStartX = 0; // Resetujemy, aby zablokować swipe przy zoomowaniu
+        return;
+    }
     touchStartX = e.changedTouches[0].screenX;
 }, {passive: true});
 
 modalElement.addEventListener('touchend', e => {
+    if (e.touches.length > 0) return; // Jeśli nadal są palce na ekranie, to nie jest koniec gestu swipe
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
 }, {passive: true});
 
 function handleSwipe() {
+    if (touchStartX === 0) return;
     const swipeThreshold = 50;
     if (touchEndX < touchStartX - swipeThreshold) {
         changeImage(1); // Swipe w lewo -> następne
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
+    } else if (touchEndX > touchStartX + swipeThreshold) {
         changeImage(-1); // Swipe w prawo -> poprzednie
     }
+    touchStartX = 0; // Reset po obsłużeniu
 }
 
 // Zamykanie przy kliknięciu w tło
@@ -290,10 +296,11 @@ document.addEventListener('keydown', function(event) {
 }
 
 .project-header h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   font-style: italic;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
@@ -332,9 +339,10 @@ document.addEventListener('keydown', function(event) {
 }
 
 .project-info-section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-style: italic;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  margin-top: 0;
   margin-bottom: 30px;
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 15px;

@@ -5,15 +5,24 @@ layout: default
 <div class="minimal-landing-full">
   <a href="{{ '/software/' | relative_url }}" class="landing-item">
     <img src="{{ '/assets/images/software.jpg' | relative_url }}" alt="Software">
-    <span>Software</span>
+    <div class="landing-content">
+      <span>Software</span>
+      <p>Nowoczesne aplikacje webowe i mobilne</p>
+    </div>
   </a>
   <a href="{{ '/engineering/' | relative_url }}" class="landing-item">
     <img src="{{ '/assets/images/engineering.jpg' | relative_url }}" alt="Engineering">
-    <span>Engineering</span>
+    <div class="landing-content">
+      <span>Engineering</span>
+      <p>Precyzyjne projekty mechaniczne i prototypowanie</p>
+    </div>
   </a>
   <a href="{{ '/leathercraft/' | relative_url }}" class="landing-item">
     <img src="{{ '/assets/images/leathercraft.jpg' | relative_url }}" alt="Leathercraft">
-    <span>Leathercraft</span>
+    <div class="landing-content">
+      <span>Leathercraft</span>
+      <p>Tradycyjne rzemiosło w nowoczesnym wydaniu</p>
+    </div>
   </a>
 </div>
 
@@ -56,7 +65,7 @@ layout: default
   display: flex;
   justify-content: center;
   align-items: stretch;
-  height: 100vh;
+  height: calc(100vh - 80px);
   gap: 0;
   padding: 0;
   margin: 0;
@@ -67,45 +76,75 @@ layout: default
   position: relative;
   overflow: hidden;
   text-decoration: none;
-  transition: flex 0.5s ease;
+  transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.landing-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 5;
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.landing-item:hover::after {
+  opacity: 0.8;
 }
 
 .landing-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease;
-  filter: grayscale(80%);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.landing-content {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  right: 40px;
+  color: white;
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.5s ease;
 }
 
 .landing-item span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  display: block;
   font-size: 2.5rem;
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  text-shadow: 0 0 20px rgba(0,0,0,0.5);
-  z-index: 10;
-  pointer-events: none;
-  transition: font-size 0.5s ease;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
+  font-family: var(--font-serif);
+}
+
+.landing-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  margin: 0;
 }
 
 .landing-item:hover {
-  flex: 1.2;
+  flex: 1.5;
 }
 
 .landing-item:hover img {
-  transform: scale(1.05);
-  filter: grayscale(0%);
+  transform: scale(1.1);
 }
 
-.landing-item:hover span {
-  font-size: 3rem;
-  font-weight: 400;
+.landing-item:hover .landing-content p {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -143,13 +182,8 @@ layout: default
   height: 300px;
   object-fit: cover;
   border-radius: 4px;
-  filter: grayscale(100%);
-  transition: filter 0.5s ease;
 }
 
-.about-container:hover .about-image img {
-  filter: grayscale(0%);
-}
 
 .about-content {
   flex: 1;
