@@ -14,23 +14,386 @@
 <meta property="og:url" content="https://elensestudio.com/engineering/project-2/" />
 <meta property="og:site_name" content="Elense Studio" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-01-29T11:14:01+01:00" />
+<meta property="article:published_time" content="2026-01-29T11:23:46+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Optymalizacja Procesów" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-01-29T11:14:01+01:00","datePublished":"2026-01-29T11:14:01+01:00","description":"Analiza i usprawnienie linii produkcyjnej w zakładzie mechanicznym.","headline":"Optymalizacja Procesów","mainEntityOfPage":{"@type":"WebPage","@id":"https://elensestudio.com/engineering/project-2/"},"url":"https://elensestudio.com/engineering/project-2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-01-29T11:23:46+01:00","datePublished":"2026-01-29T11:23:46+01:00","description":"Analiza i usprawnienie linii produkcyjnej w zakładzie mechanicznym.","headline":"Optymalizacja Procesów","mainEntityOfPage":{"@type":"WebPage","@id":"https://elensestudio.com/engineering/project-2/"},"url":"https://elensestudio.com/engineering/project-2/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elensestudio.com/feed.xml" title="Elense Studio" /></head>
 <body>
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
-      <article class="post">
-  <h1>Optymalizacja Procesów</h1>
-  <div class="post-content">
-    <p>Analiza i usprawnienie linii produkcyjnej w zakładzie mechanicznym.</p>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
+<div class="project-detail-container">
+  
+
+  <div class="project-content-wrapper">
+    <header class="project-header">
+      <h1>Optymalizacja Procesów</h1>
+      
+    </header>
+    <div class="project-description">
+      <p>Analiza i usprawnienie linii produkcyjnej w zakładzie mechanicznym.</p>
+
+    </div>
+
+    
+
+    
+      <section class="project-info-section">
+        <h2>Zdjęcia</h2>
+        <div class="project-images-grid">
+          
+            <div class="project-image-item">
+              <img src="https://picsum.photos/id/120/800/600" alt="Optymalizacja Procesów" onclick="openModal(0)">
+            </div>
+          
+            <div class="project-image-item">
+              <img src="https://picsum.photos/id/121/800/600" alt="Optymalizacja Procesów" onclick="openModal(1)">
+            </div>
+          
+            <div class="project-image-item">
+              <img src="https://picsum.photos/id/122/800/600" alt="Optymalizacja Procesów" onclick="openModal(2)">
+            </div>
+          
+        </div>
+      </section>
+    
+
+    
+
+    
+
+    <footer class="project-footer">
+      <a href="javascript:history.back()" class="btn-back">← Powrót</a>
+    </footer>
   </div>
-</article>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="imageModal" class="modal">
+  <span class="close-modal" onclick="closeModal()">&times;</span>
+  <button class="prev-modal" onclick="changeImage(-1)">&#10094;</button>
+  <img class="modal-content" id="modalImg" onclick="event.stopPropagation()">
+  <button class="next-modal" onclick="changeImage(1)">&#10095;</button>
+</div>
+
+<script>
+let currentImageIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
+const images = [
+  
+    "https://picsum.photos/id/120/800/600",
+  
+    "https://picsum.photos/id/121/800/600",
+  
+    "https://picsum.photos/id/122/800/600"
+  
+];
+
+function openModal(index) {
+  currentImageIndex = index;
+  document.getElementById("imageModal").style.display = "flex";
+  updateModalImage();
+  document.body.style.overflow = "hidden";
+}
+
+function updateModalImage() {
+  document.getElementById("modalImg").src = images[currentImageIndex];
+}
+
+function changeImage(step) {
+  currentImageIndex += step;
+  if (currentImageIndex >= images.length) {
+    currentImageIndex = 0;
+  } else if (currentImageIndex < 0) {
+    currentImageIndex = images.length - 1;
+  }
+  updateModalImage();
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+// Obsługa gestów swipe
+const modalElement = document.getElementById("imageModal");
+
+modalElement.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, {passive: true});
+
+modalElement.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, {passive: true});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+        changeImage(1); // Swipe w lewo -> następne
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+        changeImage(-1); // Swipe w prawo -> poprzednie
+    }
+}
+
+// Zamykanie przy kliknięciu w tło
+document.getElementById("imageModal").addEventListener("click", function(event) {
+  if (event.target === this) {
+    closeModal();
+  }
+});
+
+// Obsługa klawiszy
+document.addEventListener('keydown', function(event) {
+  if (document.getElementById("imageModal").style.display === "flex") {
+    if (event.key === "Escape") {
+      closeModal();
+    } else if (event.key === "ArrowLeft") {
+      changeImage(-1);
+    } else if (event.key === "ArrowRight") {
+      changeImage(1);
+    }
+  }
+});
+</script>
+
+<style>
+.project-image-item img {
+  cursor: pointer;
+}
+
+/* Lightbox styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.prev-modal, .next-modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  font-size: 40px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10000;
+  border-radius: 5px;
+}
+
+.prev-modal:hover, .next-modal:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.prev-modal {
+  left: 20px;
+}
+
+.next-modal {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .prev-modal, .next-modal {
+    padding: 10px;
+    font-size: 30px;
+  }
+  .modal-content {
+    max-width: 95%;
+  }
+}
+.site-header, .site-footer {
+  display: none !important;
+}
+
+.project-detail-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force theme wrapper to be full width for this layout */
+.wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.project-banner {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.project-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-content-wrapper {
+  max-width: 100%;
+  margin: 0;
+  padding: 60px 40px;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.project-video-container {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.video-caption {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper iframe, .video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-info-section {
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+}
+
+.project-info-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.info-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.project-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-image-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-image-item:hover img {
+  transform: scale(1.02);
+}
+
+.project-footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.btn-back {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.btn-back:hover {
+  border-color: #000;
+}
+
+@media (max-width: 768px) {
+  .project-banner {
+    height: 40vh;
+  }
+  .project-header h1 {
+    font-size: 2.5rem;
+  }
+  .project-images-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
     </div>
   </main>

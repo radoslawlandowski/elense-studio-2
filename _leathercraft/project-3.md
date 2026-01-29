@@ -4,8 +4,9 @@ layout: project_detail
 video_url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 banner_image: https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=1000&auto=format&fit=crop
 images:
-  - https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=1000&auto=format&fit=crop
-  - https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=1000&auto=format&fit=crop
+  - https://picsum.photos/id/108/800/600
+  - https://picsum.photos/id/109/800/600
+  - https://picsum.photos/id/110/800/600
 techniques: |
   *   Pasek wycięty z jednego kawałka grubej skóry bydlęcej
   *   Krawędzie wykończone naturalnym woskiem pszczelim

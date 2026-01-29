@@ -4,9 +4,9 @@ layout: project_detail
 video_url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 banner_image: /assets/images/leathercraft.jpg
 images:
-  - /assets/images/leathercraft.jpg
-  - /assets/images/leathercraft.jpg
-  - /assets/images/leathercraft.jpg
+  - https://picsum.photos/id/101/800/600
+  - https://picsum.photos/id/102/800/600
+  - https://picsum.photos/id/103/800/600
 techniques: |
   *   Ręczne szycie metodą siodłową (saddle stitch)
   *   Garbowanie roślinne skóry
