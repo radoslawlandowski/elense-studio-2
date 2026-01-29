@@ -30,17 +30,6 @@ layout: post
 Tutaj wpisz opis projektu. Możesz używać Markdown, dodawać linki i obrazki.
 ```
 
-## Hostowanie na GitHub Pages
-
-1. Wrzuć (push) ten kod do swojego repozytorium na GitHubie.
-2. Wejdź w **Settings** -> **Pages**.
-3. Ustaw **Build and deployment** -> **Source** na "GitHub Actions".
-4. GitHub automatycznie wykryje Jekyll i zbuduje stronę.
-
-Alternatywnie, jeśli używasz klasycznego podejścia:
-1. Ustaw **Branch** na `main` (lub `master`).
-2. GitHub zbuduje stronę automatycznie.
-
 ## Uruchamianie lokalne
 
 Najprostszą metodą uruchomienia strony lokalnie (bez konieczności instalowania Ruby i zależności) jest użycie **Docker**:
@@ -52,19 +41,27 @@ Najprostszą metodą uruchomienia strony lokalnie (bez konieczności instalowani
    ```
 3. Strona będzie dostępna pod adresem: `http://localhost:4000`
 
-## Deployment na GitHub Pages
+## Deployment na AWS S3
 
-Projekt jest skonfigurowany do automatycznego wdrażania za pomocą GitHub Actions.
+Projekt jest skonfigurowany do automatycznego wdrażania na AWS S3 za pomocą GitHub Actions.
 
-1. **Push do repozytorium**: Po przesłaniu zmian na gałąź `main` lub `master`, GitHub Actions automatycznie zbuduje i wdroży stronę.
-2. **Konfiguracja Pages**:
-   - Wejdź w ustawienia swojego repozytorium na GitHub (`Settings`).
-   - Wybierz sekcję `Pages` w menu po lewej stronie.
-   - W sekcji `Build and deployment > Source` upewnij się, że wybrano **GitHub Actions**.
-3. **URL strony**: Adres strony zostanie wyświetlony w zakładce `Pages` po zakończeniu pierwszego wdrożenia. Pamiętaj, aby zaktualizować `url` w pliku `_config.yml` na właściwy adres Twojej strony (obecnie ustawiono `https://elensestudio.com`).
+1. **Konfiguracja AWS**:
+   - Utwórz bucket w S3 skonfigurowany pod hosting statycznej strony.
+   - Upewnij się, że masz użytkownika IAM z uprawnieniami do zapisu w tym buckecie.
+
+2. **Sekrety GitHub**:
+   W ustawieniach repozytorium (**Settings > Secrets and variables > Actions**) dodaj następujące sekrety:
+   - `AWS_ACCESS_KEY_ID`: Twój klucz dostępu AWS.
+   - `AWS_SECRET_ACCESS_KEY`: Twój tajny klucz dostępu AWS.
+   - `AWS_REGION`: Region Twojego bucketa (np. `eu-central-1`).
+   - `AWS_S3_BUCKET`: Nazwa Twojego bucketa S3.
+
+3. **Push do repozytorium**:
+   Po przesłaniu zmian na gałąź `main`, GitHub Actions automatycznie zbuduje stronę i zsynchronizuje ją z bucketem S3.
+
 4. **Własna domena (`elensestudio.com`)**:
-   - W ustawieniach repozytorium **Settings > Pages** upewnij się, że w sekcji "Custom domain" widnieje `elensestudio.com`.
-   - Skonfiguruj u swojego dostawcy domeny rekordy DNS (A records wskazujące na IP GitHub Pages lub CNAME na `<user>.github.io`).
+   - Skonfiguruj CloudFront lub Route 53, aby wskazywały na Twój bucket S3.
+   - Pamiętaj, aby zaktualizować `url` w pliku `_config.yml` na właściwy adres Twojej strony.
 
 ### Metoda klasyczna (Ruby)
 
