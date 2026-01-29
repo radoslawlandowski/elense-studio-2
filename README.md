@@ -66,6 +66,7 @@ Projekt jest skonfigurowany do automatycznego wdrażania na AWS S3 za pomocą Gi
    - `AWS_SECRET_ACCESS_KEY`: Twój tajny klucz dostępu AWS.
    - `AWS_REGION`: Region Twojego bucketa (np. `eu-central-1`).
    - `AWS_S3_BUCKET`: Nazwa Twojego bucketa S3.
+   - `CLOUDFRONT_DISTRIBUTION_ID`: ID Twojej dystrybucji CloudFront (wymagane do odświeżenia cache'u).
 
 3. **Push do repozytorium**:
    Po przesłaniu zmian na gałąź `main`, GitHub Actions automatycznie zbuduje stronę i zsynchronizuje ją z bucketem S3.
